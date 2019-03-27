@@ -1,5 +1,10 @@
 AllCops:
   TargetRubyVersion: 2.4
+  Include:
+    - "lib/**/*.rb"
+    - "**/lib/**/*.rb"
+  Exclude:
+    - "*_spec.rb"
 
 Style/EachWithObject:
   Enabled: false
@@ -43,6 +48,7 @@ Metrics/BlockLength:
   Enabled: true
   Exclude:
     - 'spec/**/*_spec.rb'
+    - '**/spec/**/*_spec.rb'
 
 Metrics/CyclomaticComplexity:
   Enabled: true
