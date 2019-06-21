@@ -1,10 +1,5 @@
 AllCops:
   TargetRubyVersion: 2.4
-  Include:
-    - "lib/**/*.rb"
-    - "**/lib/**/*.rb"
-  Exclude:
-    - "*_spec.rb"
 
 Style/EachWithObject:
   Enabled: false
@@ -23,6 +18,9 @@ Style/StabbyLambdaParentheses:
   Enabled: false
 
 Style/FormatString:
+  Enabled: false
+
+Style/Documentation:
   Enabled: false
 
 Layout/SpaceInLambdaLiteral:
@@ -48,7 +46,6 @@ Metrics/BlockLength:
   Enabled: true
   Exclude:
     - 'spec/**/*_spec.rb'
-    - '**/spec/**/*_spec.rb'
 
 Metrics/CyclomaticComplexity:
   Enabled: true
@@ -60,3 +57,20 @@ Lint/BooleanSymbol:
 Style/AccessModifierDeclarations:
   Enabled: false
 
+Style/BlockDelimiters:
+  Enabled: false
+
+Layout/IndentFirstArrayElement:
+  EnforcedStyle: consistent
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+Lint/HandleExceptions:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+Naming/FileName:
+  Exclude:
+    - 'lib/dry-*.rb'
