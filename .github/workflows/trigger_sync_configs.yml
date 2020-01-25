@@ -4,7 +4,10 @@ on:
   push:
     paths:
       - .github/workflows/trigger_sync_configs.yml
+      - Gemfile
       - shared/**
+      - templates/**
+      - workflows/**
       - projects
     branches:
       - master
@@ -19,13 +22,14 @@ jobs:
         with:
           ruby-version: "2.6.x"
       - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install --jobs 4 --retry 3 --without benchmarks sql
-      - name: Symlink ossy
-        run: ln -sf "$(bundle show ossy)/bin/ossy" bin/ossy
-      - name: Trigger config synchronization in rom-rb repositories
+        run: gem install ossy --no-document
+      - name: Trigger config synchronization in dry-rb repositories
         env:
-          GITHUB_LOGIN: rom-bot
+          GITHUB_LOGIN: dry-bot
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-        run: for name in `cat projects`; do bin/ossy gh w rom-rb/$name sync_configs; done
+        run: |
+          for name in `cat projects`
+          do
+            echo "Syncing $name"
+            ossy gh w dry-rb/$name sync_configs
+          done
