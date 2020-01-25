@@ -31,5 +31,5 @@ jobs:
           for name in `cat projects`
           do
             echo "Syncing $name"
-            ossy gh w dry-rb/$name sync_configs
+            ossy gh w rom-rb/$name sync_configs
           done
