@@ -23,7 +23,7 @@ jobs:
           ruby-version: "2.6.x"
       - name: Install dependencies
         run: gem install ossy --no-document
-      - name: Trigger config synchronization in dry-rb repositories
+      - name: Trigger config synchronization in rom-rb repositories
         env:
           GITHUB_LOGIN: rom-bot
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
