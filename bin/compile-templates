@@ -11,5 +11,4 @@ if [ -f $config ]; then
   do
     ossy t c "$templates/$name" $(basename $name .erb) $config
   done
-  mv -v gemspec $(echo $repo | cut -d / -f 2).gemspec
 fi
