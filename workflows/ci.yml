@@ -57,7 +57,7 @@ jobs:
     if: contains(github.ref, 'tags') && github.event_name == 'create'
     needs: tests
     env:
-      GITHUB_LOGIN: dry-bot
+      GITHUB_LOGIN: rom-bot
       GITHUB_TOKEN: ${{secrets.GH_PAT}}
     steps:
       - uses: actions/checkout@v1
