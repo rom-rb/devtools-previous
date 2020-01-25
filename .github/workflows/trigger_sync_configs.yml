@@ -25,7 +25,7 @@ jobs:
         run: gem install ossy --no-document
       - name: Trigger config synchronization in dry-rb repositories
         env:
-          GITHUB_LOGIN: dry-bot
+          GITHUB_LOGIN: rom-bot
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           for name in `cat projects`
